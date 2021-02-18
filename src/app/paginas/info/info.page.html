@@ -1,0 +1,81 @@
+<ion-header no-border [ngClass]="ocultar">
+    <ion-toolbar class="colorHead">
+        <ion-title class="ion-text-center ion-title avatar animated fadeIn"> Información </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen>
+    <ion-slides pager="true" class="slide-full">
+        <ion-slide>
+            <br><br><br><br><br><br>
+            <ion-grid fixed>
+                <ion-row>
+                    <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+                        <ion-card mode="ios" class="colorGrid colorCol justifyText" *ngFor="let slideData1 of slides1">
+
+                            &nbsp;&nbsp;&nbsp;
+                            <ion-img [src]="slideData1.img" class="smallLogo"> </ion-img>
+                            <ion-card-header>
+                                <ion-card-title class="centerText">
+                                    {{slideData1.nombre}}
+                                </ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content class="justifyText">
+                                {{slideData1.desc}}
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12">
+                        <br><br>
+                        <ion-card mode="ios" class="colorGrid colorCol">
+                            <ion-card-header>
+                                <ion-card-title class="centerText">Integrantes</ion-card-title>
+                            </ion-card-header>
+                            <ion-list>
+                                <ion-item *ngFor="let slideData of slides">
+                                    <ion-avatar slot="start">
+                                        <ion-img [src]="slideData.img"> </ion-img>
+                                    </ion-avatar>
+                                    <ion-label>{{slideData.nombre}}
+                                        <p>{{slideData.desc}} </p>
+                                    </ion-label>
+                                </ion-item>
+                                <br><br>
+                                <ion-item *ngFor="let slideData2 of slides2">
+                                    <ion-avatar slot="end">
+                                        <ion-img [src]="slideData2.img"> </ion-img>
+                                    </ion-avatar>
+                                    <ion-label>{{slideData2.nombre}}
+                                        <p>{{slideData2.desc}} </p>
+                                    </ion-label>
+                                </ion-item>
+                                <br><br>
+                                <ion-item *ngFor="let slideData3 of slides3">
+                                    <ion-avatar slot="start">
+                                        <ion-img [src]="slideData3.img"> </ion-img>
+                                    </ion-avatar>
+                                    <ion-label>{{slideData3.nombre}}
+                                        <p>{{slideData3.desc}} </p>
+                                    </ion-label>
+                                </ion-item>
+                                <br><br>
+                                <ion-card-content>
+                                    <ion-button expand="block" class="btn-grad cltTxtBtn" fill="clear" (click)="closeInfo()">Regresar</ion-button>
+                                </ion-card-content>
+
+                            </ion-list>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-slide>
+    </ion-slides>
+
+</ion-content>

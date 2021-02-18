@@ -1,0 +1,7 @@
+{
+  "name": "AplicativoTesis",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

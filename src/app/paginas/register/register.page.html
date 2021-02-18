@@ -1,0 +1,60 @@
+<ion-content>
+    <!--Formulario de Registro-->
+
+    <ion-slide class="mainSlide">
+        <br><br><br><br>
+        <ion-grid fixed>
+            <ion-card mode="ios" class="colorCol">
+                <app-avatar-selector (avatarSel)="registerUser.avatar = $event"></app-avatar-selector>
+                <form (ngSubmit)="registro(fRegistro)" #fRegistro="ngForm">
+                    <ion-row>
+                        <ion-col>
+
+                            <ion-list>
+
+                                <ion-item>
+                                    <ion-icon name="mail"></ion-icon>
+                                    &nbsp;&nbsp;
+                                    <ion-label>Correo</ion-label>
+                                    <ion-input name="email" type="email" [(ngModel)]="registerUser.email" required></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-icon name="person"></ion-icon>
+                                    &nbsp;&nbsp;
+                                    <ion-label>Nombre</ion-label>
+                                    <ion-input name="nombre" type="text" [(ngModel)]="registerUser.nombre" required></ion-input>
+                                </ion-item>
+
+                                <ion-item>
+                                    <ion-icon name="lock-closed"></ion-icon>
+                                    &nbsp;&nbsp;
+                                    <ion-label>Contraseña</ion-label>
+                                    <ion-input name="password" type="password" [(ngModel)]="registerUser.password" required></ion-input>
+
+                                </ion-item>
+
+                            </ion-list>
+                        </ion-col>
+                    </ion-row>
+                    <br><br>
+
+                    <ion-row>
+                        <ion-col>
+                            <ion-button type="submit" color="tertiary" shape="round">
+                                Crear usuario
+                            </ion-button>
+                            <br><br><br><br>
+                        </ion-col>
+                        <br><br><br><br>
+                    </ion-row>
+
+                </form>
+            </ion-card>
+
+
+        </ion-grid>
+
+
+    </ion-slide>
+</ion-content>
